@@ -30,7 +30,7 @@ public class Examples {
 
   static {
     try {
-      NativeUtils.loadLibraryFromJar("/resources/_swigfaiss.so");
+      NativeUtils.loadLibraryFromJar("/_swigfaiss.so");
     } catch (IOException e) {
       e.printStackTrace(); // This is probably not the best way to handle exception :-)
     }
