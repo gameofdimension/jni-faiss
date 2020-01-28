@@ -32,6 +32,8 @@ _%.so: %.o ../faiss/libfaiss.a
 	$(CXX) $(SHAREDFLAGS) $(LDFLAGS) -o $@ $^ $(LIBS)
 
 build: _swigfaiss.so
+	mkdir -p ../src/main/resources
+	cp _swigfaiss.so ../src/main/resources/
 
 # install: build
 # 	$(PYTHON) setup.py install

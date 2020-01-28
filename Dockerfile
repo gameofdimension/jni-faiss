@@ -30,3 +30,7 @@ RUN make install
 WORKDIR /opt/jni-faiss/jni
 
 RUN make
+
+WORKDIR /opt/jni-faiss
+
+RUN mvn clean package
