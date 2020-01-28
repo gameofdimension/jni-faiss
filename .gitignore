@@ -3,3 +3,4 @@
 *.iws
 *.iml
 target/
+src/main/java/com/gameofdimension/faiss/swig/
