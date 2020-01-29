@@ -1,4 +1,4 @@
-package com.gameofdimension.faiss.demo;
+package com.gameofdimension.faiss.utils;
 
 // copy from https://raw.githubusercontent.com/thenetcircle/faiss4j/master/src/main/java/com/thenetcircle/services/faiss4j/IndexHelper.java
 

@@ -10,10 +10,9 @@ import com.gameofdimension.faiss.utils.NativeUtils;
 // import com.google.common.base.Preconditions;
 
 import java.io.IOException;
-import java.nio.file.Paths;
 import java.util.Random;
 
-import static com.gameofdimension.faiss.demo.IndexHelper.*;
+import static com.gameofdimension.faiss.utils.IndexHelper.*;
 
 public class Examples {
   // private static final Logger log = LoggerFactory.getLogger(Examples.class);
