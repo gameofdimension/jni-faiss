@@ -45,7 +45,7 @@ public class TwoIVFFlat {
     index = new IndexIVFFlat(quantizer, d, nlist, MetricType.METRIC_L2);
     Preconditions.checkArgument(!index.getIs_trained());
     index.train(nb, xb.cast());
-    Preconditions.checkArgument(!index.getIs_trained());
+    Preconditions.checkArgument(index.getIs_trained());
     index.add(nb, xb.cast());
   }
 
