@@ -5,6 +5,8 @@ package com.gameofdimension.faiss.utils;
 import com.gameofdimension.faiss.swig.floatArray;
 import com.gameofdimension.faiss.swig.intArray;
 import com.gameofdimension.faiss.swig.longArray;
+
+import java.util.Random;
 // import org.slf4j.Logger;
 // import org.slf4j.LoggerFactory;
 
@@ -90,5 +92,15 @@ public class IndexHelper {
       re[i] = c_array.getitem(i);
     }
     return re;
+  }
+
+  public static floatArray makeRandomFloatArray(int size, int dim, Random random) {
+    floatArray array = new floatArray(size * dim);
+    for (int i = 0; i < size; i++) {
+      for (int j = 0; j < dim; j++) {
+        array.setitem(i * dim + j, random.nextFloat());
+      }
+    }
+    return array;
   }
 }
