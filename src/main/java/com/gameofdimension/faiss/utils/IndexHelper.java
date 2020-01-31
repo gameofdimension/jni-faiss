@@ -100,6 +100,7 @@ public class IndexHelper {
       for (int j = 0; j < dim; j++) {
         array.setitem(i * dim + j, random.nextFloat());
       }
+      array.setitem(i * dim, i / 1000.f + array.getitem(i * dim));
     }
     return array;
   }
