@@ -1,7 +1,7 @@
 # jni-faiss
 > linux only so far
 
-- git clone && cd path/to/jni-faiss
+- git clone https://github.com/gameofdimension/jni-faiss.git && cd **path/to/jni-faiss** && git submodule update --init
 
 - docker build -t jni-faiss .
 
