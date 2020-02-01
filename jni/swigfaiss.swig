@@ -27,13 +27,14 @@
 %array_class(double, doubleArray);
 #endif
 
-// #ifdef GPU_WRAPPER
-// %module swigfaiss_gpu;
-// #else
-// %module swigfaiss;
-// #endif
-
+#ifdef GPU_WRAPPER
+%module swigfaiss_gpu;
+#else
 %module swigfaiss;
+#endif
+
+// %module swigfaiss;
+
 %rename(faiss_RangeSearchPartialResult_finalize) faiss::RangeSearchPartialResult::finalize();
 %rename(faiss_gpu_GpuIndexIVF_getQuantizer) faiss::gpu::GpuIndexIVF::getQuantizer();
 %ignore wait();
