@@ -3,7 +3,8 @@ package com.gameofdimension.faiss.tutorial;
 import static com.gameofdimension.faiss.utils.IndexHelper.makeRandomFloatArray;
 import static com.gameofdimension.faiss.utils.IndexHelper.show;
 
-import com.gameofdimension.faiss.swig.IndexFlatL2;
+import com.gameofdimension.faiss.swig.GpuIndexFlatL2;
+import com.gameofdimension.faiss.swig.StandardGpuResources;
 import com.gameofdimension.faiss.swig.floatArray;
 import com.gameofdimension.faiss.swig.longArray;
 import com.gameofdimension.faiss.utils.JniFaissInitializer;
@@ -27,13 +28,14 @@ public class GpuOneFlat {
   private floatArray xq;
 
   private Random random;
-  // private StandardGpuResources res;
-  private IndexFlatL2 index;
+  private StandardGpuResources res;
+  private GpuIndexFlatL2 index;
 
   public GpuOneFlat() {
     Preconditions.checkArgument(JniFaissInitializer.initialized());
     random = new Random(42);
-    index = new IndexFlatL2(d);
+    res = new StandardGpuResources();
+    index = new GpuIndexFlatL2(res, d);
     LOG.info(String.format("is_trained = %s, ntotal = %d",
         index.getIs_trained(), index.getNtotal()));
     xb = makeRandomFloatArray(nb, d, random);
