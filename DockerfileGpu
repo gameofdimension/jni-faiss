@@ -28,7 +28,7 @@ RUN make install
 
 WORKDIR /opt/jni-faiss/jni
 
-RUN make
+RUN make -f MakefileGpu
 
 WORKDIR /opt/jni-faiss
 
