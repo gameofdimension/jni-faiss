@@ -262,6 +262,7 @@ void gpu_sync_all_devices();
 #include <faiss/gpu/GpuIndicesOptions.h>
 #include <faiss/gpu/GpuClonerOptions.h>
 #include <faiss/gpu/utils/MemorySpace.h>
+#include <faiss/gpu/utils/DeviceUtils.h>
 #include <faiss/gpu/GpuIndex.h>
 #include <faiss/gpu/GpuIndexFlat.h>
 #include <faiss/gpu/GpuIndexIVF.h>
@@ -408,6 +409,7 @@ void gpu_sync_all_devices()
 %include  <faiss/gpu/GpuIndicesOptions.h>
 %include  <faiss/gpu/GpuClonerOptions.h>
 %include  <faiss/gpu/utils/MemorySpace.h>
+%include  <faiss/gpu/utils/DeviceUtils.h>
 %include  <faiss/gpu/GpuIndex.h>
 %include  <faiss/gpu/GpuIndexFlat.h>
 %include  <faiss/gpu/GpuIndexIVF.h>
