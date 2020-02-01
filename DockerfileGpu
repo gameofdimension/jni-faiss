@@ -1,4 +1,4 @@
-FROM nvidia/cuda:8.0-devel-centos7
+FROM nvidia/cuda:10.0-devel-centos7
 
 # Install MKL
 # RUN yum-config-manager --add-repo https://yum.repos.intel.com/mkl/setup/intel-mkl.repo
@@ -21,7 +21,7 @@ COPY . /opt/jni-faiss
 
 WORKDIR /opt/jni-faiss/faiss
 
-RUN ./configure --prefix=/usr --libdir=/usr/lib64 --with-cuda=/usr/local/cuda-8.0
+RUN ./configure --prefix=/usr --libdir=/usr/lib64 --with-cuda=/usr/local/cuda-10.0
 RUN make -j $(nproc)
 RUN make install
 
