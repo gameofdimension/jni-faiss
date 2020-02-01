@@ -41,13 +41,13 @@ public class FourGPU {
     res = new StandardGpuResources();
     index = new GpuIndexFlatL2(res, d);
     ivfIndex = new GpuIndexIVFFlat(res, d, nlist, METRIC_L2);
-    ivfIndex.train(nb, xb.cast());
-    ivfIndex.add(nb, xb.cast());
-    LOG.info(String.format("is_trained = %s, ntotal = %d",
-        index.getIs_trained(), index.getNtotal()));
     xb = makeRandomFloatArray(nb, d, random);
     xq = makeRandomFloatArray(nq, d, random);
+    ivfIndex.train(nb, xb.cast());
+    ivfIndex.add(nb, xb.cast());
     index.add(nb, xb.cast());
+    LOG.info(String.format("is_trained = %s, ntotal = %d",
+        index.getIs_trained(), index.getNtotal()));
   }
 
   public void searchFlat() {

@@ -33,11 +33,11 @@ public class OneFlat {
     Preconditions.checkArgument(JniFaissInitializer.initialized());
     random = new Random(42);
     index = new IndexFlatL2(d);
-    LOG.info(String.format("is_trained = %s, ntotal = %d",
-        index.getIs_trained(), index.getNtotal()));
     xb = makeRandomFloatArray(nb, d, random);
     xq = makeRandomFloatArray(nq, d, random);
     index.add(nb, xb.cast());
+    LOG.info(String.format("is_trained = %s, ntotal = %d",
+        index.getIs_trained(), index.getNtotal()));
   }
 
   public void sanityCheck() {
