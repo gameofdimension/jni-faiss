@@ -72,8 +72,8 @@ public class ThreeIVFPQ {
     index.setNprobe(10);
     index.search(nq, xq.cast(), rn, distances.cast(), indices.cast());
 
-    LOG.info(show(distances, nq, rn));
-    LOG.info(show(indices, nq, rn));
+    LOG.info(show(distances, 5, rn));
+    LOG.info(show(indices, 5, rn));
   }
 
   public static void main(String[] args) {
