@@ -17,6 +17,8 @@ RUN yum install -y gcc-c++ make swig3
 
 RUN yum install -y java-1.8.0-openjdk java-1.8.0-openjdk-devel maven
 
+RUN ls -al /usr/lib/jvm/
+
 COPY . /opt/jni-faiss
 
 WORKDIR /opt/jni-faiss/faiss
