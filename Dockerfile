@@ -34,3 +34,5 @@ RUN make
 WORKDIR /opt/jni-faiss
 
 RUN mvn clean install -pl cpu -am
+
+RUN mvn clean package -pl cpu-demo -am

@@ -33,3 +33,5 @@ RUN make -f MakefileGpu
 WORKDIR /opt/jni-faiss
 
 RUN mvn clean install -pl gpu -am
+
+RUN mvn clean package -pl gpu-demo -am
