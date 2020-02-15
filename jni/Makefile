@@ -9,7 +9,6 @@ ifneq ($(strip $(NVCC)),)
 	SWIGFLAGS += -DGPU_WRAPPER
 endif
 
-# JAVACFLAGS = -I /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.232.b09-0.el7_7.x86_64/include/ -I /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.232.b09-0.el7_7.x86_64/include/linux/
 JAVACFLAGS = -I /usr/lib/jvm/java/include/ -I /usr/lib/jvm/java/include/linux/
 SWIGJAVASRC = ../cpu/src/main/java/com/gameofdimension/faiss/swig
 
@@ -33,8 +32,8 @@ _%.so: %.o ../faiss/libfaiss.a
 	$(CXX) $(SHAREDFLAGS) $(LDFLAGS) -o $@ $^ $(LIBS)
 
 build: _swigfaiss.so
-	mkdir -p ../src/main/resources
-	cp _swigfaiss.so ../src/main/resources/
+	mkdir -p ../cpu/src/main/resources
+	cp _swigfaiss.so ../cpu/src/main/resources/
 
 # install: build
 # 	$(PYTHON) setup.py install
