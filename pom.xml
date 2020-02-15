@@ -6,86 +6,16 @@
   <groupId>com.gameofdimension</groupId>
   <artifactId>jni-faiss</artifactId>
   <version>0.0.1</version>
-  <packaging>jar</packaging>
+  <modules>
+    <module>cpu</module>
+    <module>gpu</module>
+    <module>common</module>
+    <module>cpu-demo</module>
+    <module>gpu-demo</module>
+  </modules>
+
+  <packaging>pom</packaging>
   <modelVersion>4.0.0</modelVersion>
 
-  <dependencies>
-    <dependency>
-      <groupId>com.google.guava</groupId>
-      <artifactId>guava</artifactId>
-      <version>21.0</version>
-    </dependency>
-  </dependencies>
-
-
-  <profiles>
-    <profile>
-      <id>uber</id>
-      <activation>
-        <activeByDefault>true</activeByDefault>
-      </activation>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-shade-plugin</artifactId>
-            <version>2.3</version>
-            <executions>
-              <execution>
-                <phase>package</phase>
-                <goals>
-                  <goal>shade</goal>
-                </goals>
-                <configuration>
-                  <transformers>
-                    <transformer
-                      implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer">
-                    </transformer>
-                  </transformers>
-                  <filters>
-                    <filter>
-                      <artifact>*.*</artifact>
-                      <excludes>
-                        <exclude>META-INF/*.RSA</exclude>
-                        <exclude>META-INF/*.DSA</exclude>
-                        <exclude>META-INF/*.SF</exclude>
-                      </excludes>
-                    </filter>
-                  </filters>
-                </configuration>
-              </execution>
-            </executions>
-          </plugin>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <configuration>
-              <source>1.8</source>
-              <target>1.8</target>
-            </configuration>
-          </plugin>
-          <plugin>
-            <groupId>org.jacoco</groupId>
-            <artifactId>jacoco-maven-plugin</artifactId>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-    <profile>
-      <id>no-uber</id>
-      <build>
-        <plugins>
-          <plugin>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <version>3.5.1</version>
-            <configuration>
-              <source>1.8</source>
-              <target>1.8</target>
-            </configuration>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-  </profiles>
 
 </project>

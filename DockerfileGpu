@@ -32,4 +32,4 @@ RUN make -f MakefileGpu
 
 WORKDIR /opt/jni-faiss
 
-RUN mvn clean package
+RUN mvn clean install -pl gpu -am
